@@ -7,162 +7,113 @@
   <title>天府研教 · 研究生标杆院校案例实践分享</title>
   <style>
     :root {
-      --bg: #f4f7fb;
-      --bg2: #ffffff;
-      --ink: #162033;
-      --muted: #65758b;
-      --rule: #d9e2ef;
-      --accent: #2563eb;
-      --accent2: #f97316;
-      --accent3: #10b981;
-      --purple: #7c3aed;
-      --pink: #ec4899;
-      --shadow: 0 18px 45px rgba(22, 32, 51, 0.12);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --font: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      --bg: #f4f7fb; --bg2: #ffffff; --ink: #162033; --muted: #65758b; --rule: #d9e2ef;
+      --accent: #2563eb; --accent2: #f97316; --accent3: #10b981; --purple: #7c3aed; --pink: #ec4899;
+      --shadow: 0 18px 45px rgba(22,32,51,0.12); --radius: 22px; --radius-sm: 14px;
+      --font: "Microsoft YaHei","PingFang SC",system-ui,sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.7; }
-    .app { max-width: 980px; margin: 0 auto; padding: 24px; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.7; }
+    .app { max-width:980px; margin:0 auto; padding:24px; }
 
-    /* Hero */
     .hero {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 60%, #0ea5e9 100%);
-      border-radius: var(--radius);
-      padding: 48px 32px 36px;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 28px;
-      position: relative;
-      overflow: hidden;
+      background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 60%,#0ea5e9 100%);
+      border-radius:var(--radius); padding:48px 32px 36px; color:#fff; text-align:center;
+      margin-bottom:28px; position:relative; overflow:hidden;
     }
     .hero::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%);
+      content:""; position:absolute; inset:0;
+      background:radial-gradient(circle at 20% 30%,rgba(255,255,255,0.12) 0%,transparent 50%),
+                 radial-gradient(circle at 80% 70%,rgba(255,255,255,0.08) 0%,transparent 40%);
     }
-    .hero > * { position: relative; z-index: 1; }
-    .hero .badge {
-      display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.25); border-radius: 999px;
-      padding: 6px 18px; font-size: 13px; margin-bottom: 18px;
-    }
-    .hero h1 { font-size: clamp(24px, 4vw, 34px); font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
-    .hero .sub { font-size: 15px; opacity: 0.92; max-width: 640px; margin: 0 auto 20px; }
-    .hero .meta { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 13px; opacity: 0.85; }
-    .hero .meta span { display: flex; align-items: center; gap: 6px; }
+    .hero>* { position:relative; z-index:1; }
+    .hero .badge { display:inline-block; background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:6px 18px; font-size:13px; margin-bottom:18px; }
+    .hero h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.3; margin-bottom:12px; }
+    .hero .sub { font-size:15px; opacity:0.92; max-width:640px; margin:0 auto 20px; }
+    .hero .meta { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; font-size:13px; opacity:0.85; }
 
-    /* TOC */
-    .toc { background: var(--bg2); border-radius: var(--radius); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow); }
-    .toc h2 { font-size: 18px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-    .toc h2::before { content: ""; width: 4px; height: 22px; background: var(--accent); border-radius: 4px; }
-    .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
-    .toc-item {
-      background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px;
-      text-decoration: none; color: var(--ink); border: 1px solid var(--rule);
-      transition: transform .2s, box-shadow .2s;
-    }
-    .toc-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.12); border-color: var(--accent); }
-    .toc-item .num { font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1; }
-    .toc-item .label { font-size: 14px; font-weight: 600; margin-top: 6px; }
-    .toc-item .desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .toc { background:var(--bg2); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
+    .toc h2 { font-size:18px; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+    .toc h2::before { content:""; width:4px; height:22px; background:var(--accent); border-radius:4px; }
+    .toc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+    .toc-item { background:var(--bg); border-radius:var(--radius-sm); padding:14px 16px; text-decoration:none; color:var(--ink); border:1px solid var(--rule); transition:transform .2s,box-shadow .2s; }
+    .toc-item:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,99,235,0.12); border-color:var(--accent); }
+    .toc-item .num { font-size:22px; font-weight:800; color:var(--accent); line-height:1; }
+    .toc-item .label { font-size:14px; font-weight:600; margin-top:6px; }
+    .toc-item .desc { font-size:12px; color:var(--muted); margin-top:4px; }
 
-    /* Section cards */
-    .section { background: var(--bg2); border-radius: var(--radius); padding: 28px; margin-bottom: 24px; box-shadow: var(--shadow); }
-    .section-head {
-      display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .section-num {
-      width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 16px; color: #fff; flex-shrink: 0;
-    }
-    .section-title h2 { font-size: 20px; font-weight: 700; }
-    .section-title p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .section { background:var(--bg2); border-radius:var(--radius); padding:28px; margin-bottom:24px; box-shadow:var(--shadow); }
+    .section-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--rule); }
+    .section-num { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; color:#fff; flex-shrink:0; }
+    .section-title h2 { font-size:20px; font-weight:700; }
+    .section-title p { font-size:13px; color:var(--muted); margin-top:2px; }
 
-    /* Inner cards */
-    .card-grid { display: grid; gap: 16px; }
-    .card {
-      background: var(--bg); border-radius: var(--radius-sm); padding: 20px;
-      border-left: 4px solid var(--accent);
-    }
-    .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-    .card h3 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .card ul { padding-left: 18px; font-size: 14px; color: var(--muted); }
-    .card ul li { margin-bottom: 6px; }
-    .card ul li strong { color: var(--ink); }
-    .card p { font-size: 14px; color: var(--muted); }
+    .card-grid { display:grid; gap:16px; }
+    .card { background:var(--bg); border-radius:var(--radius-sm); padding:20px; border-left:4px solid var(--accent); }
+    .card h3 { font-size:16px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .card h3 .dot { width:8px; height:8px; border-radius:50%; background:var(--accent); }
+    .card ul { padding-left:18px; font-size:14px; color:var(--muted); }
+    .card ul li { margin-bottom:6px; }
+    .card ul li strong { color:var(--ink); }
+    .card p { font-size:14px; color:var(--muted); }
+    .card.accent2 { border-left-color:var(--accent2); } .card.accent2 h3 .dot { background:var(--accent2); }
+    .card.accent3 { border-left-color:var(--accent3); } .card.accent3 h3 .dot { background:var(--accent3); }
+    .card.purple { border-left-color:var(--purple); } .card.purple h3 .dot { background:var(--purple); }
+    .card.pink { border-left-color:var(--pink); } .card.pink h3 .dot { background:var(--pink); }
 
-    /* Color variants */
-    .card.accent2 { border-left-color: var(--accent2); }
-    .card.accent2 h3 .dot { background: var(--accent2); }
-    .card.accent3 { border-left-color: var(--accent3); }
-    .card.accent3 h3 .dot { background: var(--accent3); }
-    .card.purple { border-left-color: var(--purple); }
-    .card.purple h3 .dot { background: var(--purple); }
-    .card.pink { border-left-color: var(--pink); }
-    .card.pink h3 .dot { background: var(--pink); }
+    .section-num.accent { background:var(--accent); }
+    .section-num.accent2 { background:var(--accent2); }
+    .section-num.accent3 { background:var(--accent3); }
+    .section-num.purple { background:var(--purple); }
+    .section-num.pink { background:var(--pink); }
 
-    .section-num.accent { background: var(--accent); }
-    .section-num.accent2 { background: var(--accent2); }
-    .section-num.accent3 { background: var(--accent3); }
-    .section-num.purple { background: var(--purple); }
-    .section-num.pink { background: var(--pink); }
+    .highlight { background:linear-gradient(135deg,rgba(37,99,235,0.06),rgba(16,185,129,0.06)); border:1px solid var(--rule); border-radius:var(--radius-sm); padding:18px 20px; margin-top:16px; }
+    .highlight p { font-size:14px; color:var(--ink); }
+    .highlight .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .tag { background:var(--bg2); border:1px solid var(--rule); border-radius:6px; padding:4px 10px; font-size:12px; color:var(--muted); }
 
-    /* Highlight box */
-    .highlight {
-      background: linear-gradient(135deg, rgba(37,99,235,0.06), rgba(16,185,129,0.06));
-      border: 1px solid var(--rule); border-radius: var(--radius-sm);
-      padding: 18px 20px; margin-top: 16px;
-    }
-    .highlight p { font-size: 14px; color: var(--ink); }
-    .highlight .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .tag {
-      background: var(--bg2); border: 1px solid var(--rule); border-radius: 6px;
-      padding: 4px 10px; font-size: 12px; color: var(--muted);
-    }
+    .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-top:16px; }
+    .metric { background:var(--bg2); border-radius:var(--radius-sm); padding:14px; text-align:center; border:1px solid var(--rule); }
+    .metric strong { display:block; font-size:24px; font-weight:800; color:var(--accent); }
+    .metric span { font-size:12px; color:var(--muted); }
 
-    /* Metrics */
-    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 16px; }
-    .metric {
-      background: var(--bg2); border-radius: var(--radius-sm); padding: 14px; text-align: center;
-      border: 1px solid var(--rule);
-    }
-    .metric strong { display: block; font-size: 24px; font-weight: 800; color: var(--accent); }
-    .metric span { font-size: 12px; color: var(--muted); }
+    .school-case { background:var(--bg); border-radius:var(--radius-sm); padding:20px; border:1px solid var(--rule); margin-bottom:12px; }
+    .school-case h4 { font-size:15px; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+    .school-case h4 .icon { width:28px; height:28px; border-radius:8px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; }
+    .school-case ul { padding-left:18px; font-size:13px; color:var(--muted); }
+    .school-case ul li { margin-bottom:5px; }
 
-    /* School case */
-    .school-case {
-      background: var(--bg); border-radius: var(--radius-sm); padding: 20px;
-      border: 1px solid var(--rule); margin-bottom: 12px;
-    }
-    .school-case h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-    .school-case h4 .icon { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
-    .school-case ul { padding-left: 18px; font-size: 13px; color: var(--muted); }
-    .school-case ul li { margin-bottom: 5px; }
+    /* Images */
+    .figure { margin:16px 0; text-align:center; }
+    .figure img, .figure video { max-width:100%; height:auto; border-radius:var(--radius-sm); border:1px solid var(--rule); cursor:pointer; transition:transform .2s; }
+    .figure img:hover, .figure video:hover { transform:scale(1.01); }
+    .figure figcaption { font-size:12px; color:var(--muted); margin-top:6px; }
+    .figure-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; margin:16px 0; }
+    .figure-grid .figure { margin:0; }
+    .figure-grid .figure img { width:100%; }
 
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-      border-radius: var(--radius); padding: 36px 24px; text-align: center; color: #fff; margin-top: 8px;
-    }
-    footer h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
-    footer p { font-size: 14px; opacity: 0.9; }
-    footer .meta { margin-top: 16px; font-size: 12px; opacity: 0.7; }
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:1000; align-items:center; justify-content:center; padding:20px; }
+    .lightbox.active { display:flex; }
+    .lightbox img, .lightbox video { max-width:95vw; max-height:90vh; border-radius:8px; }
+    .lightbox .close { position:absolute; top:20px; right:30px; color:#fff; font-size:36px; cursor:pointer; }
 
-    @media (max-width: 640px) {
-      .app { padding: 16px; }
-      .hero { padding: 32px 20px 24px; }
-      .section { padding: 20px; }
-      .hero .meta { gap: 12px; }
+    footer { background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%); border-radius:var(--radius); padding:36px 24px; text-align:center; color:#fff; margin-top:8px; }
+    footer h2 { font-size:22px; font-weight:700; margin-bottom:10px; }
+    footer p { font-size:14px; opacity:0.9; }
+    footer .meta { margin-top:16px; font-size:12px; opacity:0.7; }
+
+    @media (max-width:640px) {
+      .app { padding:16px; }
+      .hero { padding:32px 20px 24px; }
+      .section { padding:20px; }
+      .hero .meta { gap:12px; }
+      .figure-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
 <body>
   <div class="app">
-    <!-- Hero -->
     <header class="hero">
       <div class="badge">研究生教育标杆分享专题</div>
       <h1>天府研教 · 研究生标杆院校案例实践分享</h1>
@@ -174,35 +125,14 @@
       </div>
     </header>
 
-    <!-- TOC -->
     <nav class="toc" id="toc">
       <h2>目录提要</h2>
       <div class="toc-grid">
-        <a href="#pain" class="toc-item">
-          <div class="num">01</div>
-          <div class="label">突出痛点</div>
-          <div class="desc">建设特征、核心痛点与行业背景</div>
-        </a>
-        <a href="#course" class="toc-item">
-          <div class="num">02</div>
-          <div class="label">核心做法一</div>
-          <div class="desc">专业一体化AI课程群</div>
-        </a>
-        <a href="#cases" class="toc-item">
-          <div class="num">03</div>
-          <div class="label">标杆实践</div>
-          <div class="desc">多校并举、多维融合</div>
-        </a>
-        <a href="#methods" class="toc-item">
-          <div class="num">04</div>
-          <div class="label">核心做法二至四</div>
-          <div class="desc">未来学习中心、元宇宙、双智能体</div>
-        </a>
-        <a href="#future" class="toc-item">
-          <div class="num">05</div>
-          <div class="label">配套措施与未来学习</div>
-          <div class="desc">减负增效、导师图谱、AI学伴</div>
-        </a>
+        <a href="#pain" class="toc-item"><div class="num">01</div><div class="label">突出痛点</div><div class="desc">建设特征、核心痛点与行业背景</div></a>
+        <a href="#course" class="toc-item"><div class="num">02</div><div class="label">核心做法一</div><div class="desc">专业一体化AI课程群</div></a>
+        <a href="#cases" class="toc-item"><div class="num">03</div><div class="label">标杆实践</div><div class="desc">多校并举、多维融合</div></a>
+        <a href="#methods" class="toc-item"><div class="num">04</div><div class="label">核心做法二至四</div><div class="desc">未来学习中心、元宇宙、双智能体</div></a>
+        <a href="#future" class="toc-item"><div class="num">05</div><div class="label">配套措施与未来学习</div><div class="desc">减负增效、导师图谱、AI学伴</div></a>
       </div>
     </nav>
 
@@ -210,10 +140,7 @@
     <section class="section" id="pain">
       <div class="section-head">
         <div class="section-num accent">01</div>
-        <div class="section-title">
-          <h2>突出痛点与建设特征分析</h2>
-          <p>研究生院建设特征、核心痛点与行业背景分析</p>
-        </div>
+        <div class="section-title"><h2>突出痛点与建设特征分析</h2><p>研究生院建设特征、核心痛点与行业背景分析</p></div>
       </div>
       <div class="card-grid">
         <div class="card">
@@ -234,34 +161,34 @@
           </ul>
         </div>
       </div>
-      <div class="highlight">
-        <p><strong>核心目标：</strong>构建"教学-科研-产业"三位一体的成果孵化体系，打通价值转化链路。</p>
-      </div>
+      <div class="highlight"><p><strong>核心目标：</strong>构建"教学-科研-产业"三位一体的成果孵化体系，打通价值转化链路。</p></div>
+
+      <figure class="figure">
+        <img src="./assets/slide3_img41.png" alt="建设特征与痛点分析" onclick="openLightbox(this)">
+        <figcaption>建设特征与核心痛点全景分析</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="./assets/slide3_img39.png" alt="痛点细节" onclick="openLightbox(this)">
+        <figcaption>核心痛点与建设方向</figcaption>
+      </figure>
     </section>
 
     <!-- 02 核心做法一 -->
     <section class="section" id="course">
       <div class="section-head">
         <div class="section-num accent2">02</div>
-        <div class="section-title">
-          <h2>核心做法一：专业一体化AI课程群</h2>
-          <p>以产业需求为导向，打破学科壁垒，构建从理论到实践、从课堂到产业的闭环AI教育生态</p>
-        </div>
+        <div class="section-title"><h2>核心做法一：专业一体化AI课程群</h2><p>以产业需求为导向，打破学科壁垒，构建从理论到实践、从课堂到产业的闭环AI教育生态</p></div>
       </div>
       <div class="card-grid">
-        <div class="card">
-          <h3><span class="dot"></span>建设路线：递进式知识体系</h3>
-          <p>打破单门课程的孤岛效应，打造"基础筑基—技术进阶—场景应用—前沿探索"的阶梯式课程群，实现知识体系的有机衔接与螺旋上升。</p>
-        </div>
-        <div class="card accent3">
-          <h3><span class="dot"></span>建设模式：双导师驱动产教融合</h3>
-          <p>实施"校内学术导师+企业实战导师"双轨制，深度引入行业真实业务场景与工程化案例，让教学内容紧贴产业前沿。</p>
-        </div>
-        <div class="card purple">
-          <h3><span class="dot"></span>核心形态：智能化教学新范式</h3>
-          <p>融合数字人互动讲师、动态更新的AI知识库、可视化知识图谱及领域定制智能体，构建三位一体的现代化教学支撑体系。</p>
-        </div>
+        <div class="card"><h3><span class="dot"></span>建设路线：递进式知识体系</h3><p>打破单门课程的孤岛效应，打造"基础筑基—技术进阶—场景应用—前沿探索"的阶梯式课程群，实现知识体系的有机衔接与螺旋上升。</p></div>
+        <div class="card accent3"><h3><span class="dot"></span>建设模式：双导师驱动产教融合</h3><p>实施"校内学术导师+企业实战导师"双轨制，深度引入行业真实业务场景与工程化案例，让教学内容紧贴产业前沿。</p></div>
+        <div class="card purple"><h3><span class="dot"></span>核心形态：智能化教学新范式</h3><p>融合数字人互动讲师、动态更新的AI知识库、可视化知识图谱及领域定制智能体，构建三位一体的现代化教学支撑体系。</p></div>
       </div>
+
+      <figure class="figure">
+        <img src="./assets/slide5_img53.png" alt="电子科大课程群建设路线" onclick="openLightbox(this)">
+        <figcaption>电子科大课程群建设路线：AI金课体系与学科大模型</figcaption>
+      </figure>
 
       <div class="highlight" style="margin-top:20px;">
         <p><strong>课程设计思路——工科智慧课程设计范式</strong></p>
@@ -274,23 +201,30 @@
         </div>
       </div>
 
+      <div class="figure-grid" style="margin-top:16px;">
+        <figure class="figure"><img src="./assets/slide8_img62.png" alt="课程设计1" onclick="openLightbox(this)"><figcaption>课程设计思路（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide8_img63.png" alt="课程设计2" onclick="openLightbox(this)"><figcaption>课程设计思路（二）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide8_img64.png" alt="课程设计3" onclick="openLightbox(this)"><figcaption>课程设计思路（三）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide8_img65.png" alt="课程设计4" onclick="openLightbox(this)"><figcaption>课程设计思路（四）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide8_img66.png" alt="课程设计5" onclick="openLightbox(this)"><figcaption>课程设计思路（五）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide8_img67.png" alt="课程设计6" onclick="openLightbox(this)"><figcaption>课程设计思路（六）</figcaption></figure>
+      </div>
+
       <div class="card-grid" style="margin-top:20px;">
-        <div class="card">
-          <h3><span class="dot"></span>学科基础知识库</h3>
-          <p>作为电子科学与技术垂直领域智能基座的"通用语义底盘"，系统性梳理五大学科方向的核心理论体系、专业术语与符号规范、数学工具库、通用实验原理库。</p>
-        </div>
-        <div class="card accent2">
-          <h3><span class="dot"></span>课程专属知识库</h3>
-          <p>连接抽象理论与具体实践的教学转化枢纽。为每门课程量身定制专属知识模块，形成覆盖理论核心、仿真实践与工程案例的个性化知识子库。</p>
-        </div>
-        <div class="card accent3">
-          <h3><span class="dot"></span>科研前沿知识库</h3>
-          <p>采集近五年高水平期刊、顶级会议论文、国家自然科学基金项目成果及本校课题组特色科研积累，对多模态文献数据进行知识抽取。</p>
-        </div>
-        <div class="card purple">
-          <h3><span class="dot"></span>产业标准知识库</h3>
-          <p>整合培养方案、课程标准、开题/中期/答辩规范、学位论文撰写标准等全口径制度文件，汇聚领域最新产业动态与龙头企业真实项目案例。</p>
-        </div>
+        <div class="card"><h3><span class="dot"></span>学科基础知识库</h3><p>作为电子科学与技术垂直领域智能基座的"通用语义底盘"，系统性梳理五大学科方向的核心理论体系、专业术语与符号规范、数学工具库、通用实验原理库。</p></div>
+        <div class="card accent2"><h3><span class="dot"></span>课程专属知识库</h3><p>连接抽象理论与具体实践的教学转化枢纽。为每门课程量身定制专属知识模块，形成覆盖理论核心、仿真实践与工程案例的个性化知识子库。</p></div>
+        <div class="card accent3"><h3><span class="dot"></span>科研前沿知识库</h3><p>采集近五年高水平期刊、顶级会议论文、国家自然科学基金项目成果及本校课题组特色科研积累，对多模态文献数据进行知识抽取。</p></div>
+        <div class="card purple"><h3><span class="dot"></span>产业标准知识库</h3><p>整合培养方案、课程标准、开题/中期/答辩规范、学位论文撰写标准等全口径制度文件，汇聚领域最新产业动态与龙头企业真实项目案例。</p></div>
+      </div>
+
+      <figure class="figure" style="margin-top:16px;">
+        <img src="./assets/slide10_img70.jpg" alt="知识治理" onclick="openLightbox(this)">
+        <figcaption>知识治理关键举措：五维知识库体系</figcaption>
+      </figure>
+
+      <div class="figure-grid" style="margin-top:16px;">
+        <figure class="figure"><img src="./assets/slide12_img73.png" alt="数据记录1" onclick="openLightbox(this)"><figcaption>全流程数据记录（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide12_img75.png" alt="数据记录2" onclick="openLightbox(this)"><figcaption>全流程数据记录（二）</figcaption></figure>
       </div>
     </section>
 
@@ -298,10 +232,7 @@
     <section class="section" id="cases">
       <div class="section-head">
         <div class="section-num accent3">03</div>
-        <div class="section-title">
-          <h2>标杆实践：多校并举、多维融合</h2>
-          <p>电子科技大学、四川大学、西南交大、西南财大、西南石油、川音、成医等实践合集</p>
-        </div>
+        <div class="section-title"><h2>标杆实践：多校并举、多维融合</h2><p>电子科技大学、四川大学、西南交大、西南财大、西南石油、川音、成医等实践合集</p></div>
       </div>
 
       <div class="school-case">
@@ -319,12 +250,24 @@
         </div>
       </div>
 
+      <figure class="figure">
+        <img src="./assets/slide13_img76.png" alt="电子科大案例" onclick="openLightbox(this)">
+        <figcaption>电子科技大学 — 电子科学与技术学科大模型门户</figcaption>
+      </figure>
+
       <div class="school-case">
         <h4><span class="icon" style="background:var(--accent2)">SCU</span>四川大学 — AI+学科交叉课程群建设</h4>
         <ul>
           <li><strong>覆盖面极广：</strong>涵盖旅游学院、体育学院、自动化、材料、医学、马克思主义、建筑与环境等7大特色学科。</li>
           <li><strong>资源规模：</strong>累计建设7门AI金课，开发28个学科课程图谱，设计21个任务方案，完成7个教学智能体研发。</li>
         </ul>
+      </div>
+
+      <div class="figure-grid">
+        <figure class="figure"><img src="./assets/slide14_img96.png" alt="川大案例1" onclick="openLightbox(this)"><figcaption>四川大学 — AI+学科交叉课程群</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide14_img97.png" alt="川大案例2" onclick="openLightbox(this)"><figcaption>四川大学 — 课程群建设全景</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide14_img98.png" alt="川大案例3" onclick="openLightbox(this)"><figcaption>课程特色展示</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide14_img99.png" alt="川大案例4" onclick="openLightbox(this)"><figcaption>学科交叉融合实践</figcaption></figure>
       </div>
 
       <div class="school-case">
@@ -335,6 +278,21 @@
         </ul>
       </div>
 
+      <div class="figure-grid">
+        <figure class="figure"><img src="./assets/slide15_img101.gif" alt="西南交大GIF1"><figcaption>西南交大 — 本研一体化课程群（动图）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide15_img102.gif" alt="西南交大GIF2"><figcaption>AI课程群实践展示（动图）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide15_img103.gif" alt="西南交大GIF3"><figcaption>产教融合协同共建（动图）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide15_img104.gif" alt="西南交大GIF4"><figcaption>课程群建设成效（动图）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide15_img105.gif" alt="西南交大GIF5"><figcaption>智能教学场景（动图）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide15_img106.gif" alt="西南交大GIF6"><figcaption>数智化教学实践（动图）</figcaption></figure>
+      </div>
+
+      <div class="figure-grid" style="margin-top:12px;">
+        <figure class="figure"><img src="./assets/slide16_img108.png" alt="西南交大案例1" onclick="openLightbox(this)"><figcaption>西南交大 — 课程群架构</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide16_img109.png" alt="西南交大案例2" onclick="openLightbox(this)"><figcaption>AI赋能教学实践</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide16_img110.png" alt="西南交大案例3" onclick="openLightbox(this)"><figcaption>产教融合协同机制</figcaption></figure>
+      </div>
+
       <div class="school-case">
         <h4><span class="icon" style="background:var(--purple)">SWUFE</span>西南财经大学 — 数智研学中心（未来学习中心）</h4>
         <ul>
@@ -343,8 +301,16 @@
           <li><strong>教科研数据智脑：</strong>全域采集教、学、研、管全链路数据，通过大数据分析挖掘高阶价值。</li>
           <li><strong>产教融合对接枢纽：</strong>打通线上线下混合式研学通道，链接企业真实场景与高校科研资源。</li>
         </ul>
-        <p style="font-size:13px;color:var(--muted);margin-top:8px;">以"中央厨房"模式实现教学资源的标准化生产与智能分发，以"调度中心"职能统筹算力调度、数据流转与场景协同。</p>
       </div>
+
+      <figure class="figure">
+        <img src="./assets/slide17_img122.png" alt="西南财大未来学习中心" onclick="openLightbox(this)">
+        <figcaption>西南财经大学 — 数智研学中心（未来学习中心）</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="./assets/slide17_img124.gif" alt="西南财大GIF">
+        <figcaption>未来学习中心动态展示</figcaption>
+      </figure>
 
       <div class="school-case">
         <h4><span class="icon" style="background:var(--pink)">SWPU</span>西南石油大学 — 元宇宙虚拟实训</h4>
@@ -354,11 +320,26 @@
         </ul>
       </div>
 
+      <figure class="figure">
+        <img src="./assets/slide20_img129.png" alt="西南石油元宇宙" onclick="openLightbox(this)">
+        <figcaption>西南石油大学 — 元宇宙虚拟实训空间</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="./assets/slide20_img137.gif" alt="元宇宙GIF">
+        <figcaption>元宇宙沉浸式实训演示</figcaption>
+      </figure>
+
       <div class="school-case">
         <h4><span class="icon" style="background:var(--accent)">SCCM</span>四川音乐学院 — 钢琴演奏智能诊断</h4>
         <ul>
           <li>标准乐谱 MXL 与学生演奏 MIDI 数据波形对比分析，实现弹错/漏弹偏差度智能诊断。</li>
         </ul>
+      </div>
+
+      <div class="figure-grid">
+        <figure class="figure"><img src="./assets/slide21_img147.gif" alt="钢琴诊断GIF"><figcaption>钢琴演奏智能诊断 — 波形对比（动图）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide21_img148.png" alt="钢琴诊断1" onclick="openLightbox(this)"><figcaption>钢琴演奏诊断系统界面</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide21_img149.png" alt="钢琴诊断2" onclick="openLightbox(this)"><figcaption>MIDI 与乐谱偏差分析</figcaption></figure>
       </div>
 
       <div class="school-case">
@@ -370,16 +351,23 @@
           <li>学科大模型将成为研究生培养的"第三导师"，与校内导师、企业导师组成三元指导体系。</li>
         </ul>
       </div>
+
+      <div class="figure-grid">
+        <figure class="figure"><img src="./assets/slide23_img160.png" alt="成医案例1" onclick="openLightbox(this)"><figcaption>成都医学院 — 科研+管理AI Agent（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide23_img161.png" alt="成医案例2" onclick="openLightbox(this)"><figcaption>科研+管理AI Agent（二）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide23_img162.jpg" alt="成医案例3" onclick="openLightbox(this)"><figcaption>科研+管理AI Agent（三）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide23_img163.png" alt="成医案例4" onclick="openLightbox(this)"><figcaption>科研+管理AI Agent（四）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide24_img164.png" alt="成医案例5" onclick="openLightbox(this)"><figcaption>双智能体协同体系</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide24_img166.png" alt="成医案例6" onclick="openLightbox(this)"><figcaption>全流程科研助手</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide24_img171.png" alt="成医案例7" onclick="openLightbox(this)"><figcaption>教学管理智能体</figcaption></figure>
+      </div>
     </section>
 
     <!-- 04 核心做法二至四 -->
     <section class="section" id="methods">
       <div class="section-head">
         <div class="section-num purple">04</div>
-        <div class="section-title">
-          <h2>核心做法二至四</h2>
-          <p>未来学习中心、元宇宙虚拟实训空间、双智能体AI引擎</p>
-        </div>
+        <div class="section-title"><h2>核心做法二至四</h2><p>未来学习中心、元宇宙虚拟实训空间、双智能体AI引擎</p></div>
       </div>
 
       <div class="card-grid">
@@ -419,10 +407,7 @@
     <section class="section" id="future">
       <div class="section-head">
         <div class="section-num pink">05</div>
-        <div class="section-title">
-          <h2>配套措施与未来学习</h2>
-          <p>减负型智能教学工具、导师图谱、教学过程智慧化、AI学伴</p>
-        </div>
+        <div class="section-title"><h2>配套措施与未来学习</h2><p>减负型智能教学工具、导师图谱、教学过程智慧化、AI学伴</p></div>
       </div>
 
       <div class="card-grid">
@@ -457,14 +442,48 @@
           <p>学科大模型将成为研究生培养的"第三导师"，与校内导师、企业导师组成三元指导体系。模型负责数据与文献，校内导师聚焦理论深度，企业导师提供应用场景，三方协同共同制定培养方案。</p>
         </div>
       </div>
+
+      <div class="figure-grid" style="margin-top:20px;">
+        <figure class="figure"><img src="./assets/slide25_img178.png" alt="减负工具1" onclick="openLightbox(this)"><figcaption>减负型智能教学工具（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide25_img179.png" alt="减负工具2" onclick="openLightbox(this)"><figcaption>减负型智能教学工具（二）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide25_img181.png" alt="减负工具3" onclick="openLightbox(this)"><figcaption>减负型智能教学工具（三）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide27_img186.png" alt="导师图谱1" onclick="openLightbox(this)"><figcaption>导师图谱（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide27_img187.png" alt="导师图谱2" onclick="openLightbox(this)"><figcaption>导师图谱（二）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide28_img188.png" alt="教学过程智慧化" onclick="openLightbox(this)"><figcaption>教学过程智慧化 — 任务引擎</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide30_img191.jpg" alt="未来学习1" onclick="openLightbox(this)"><figcaption>未来学习（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide30_img192.jpg" alt="未来学习2" onclick="openLightbox(this)"><figcaption>未来学习（二）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide30_img193.jpg" alt="未来学习3" onclick="openLightbox(this)"><figcaption>未来学习（三）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide30_img194.jpg" alt="未来学习4" onclick="openLightbox(this)"><figcaption>未来学习（四）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide30_img195.jpg" alt="未来学习5" onclick="openLightbox(this)"><figcaption>未来学习（五）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide30_img197.png" alt="未来学习6" onclick="openLightbox(this)"><figcaption>未来学习全景</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide31_img198.jpg" alt="AI学伴1" onclick="openLightbox(this)"><figcaption>超级学伴智能体（一）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide31_img199.jpg" alt="AI学伴2" onclick="openLightbox(this)"><figcaption>超级学伴智能体（二）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide31_img200.jpg" alt="AI学伴3" onclick="openLightbox(this)"><figcaption>超级学伴智能体（三）</figcaption></figure>
+        <figure class="figure"><img src="./assets/slide31_img201.jpg" alt="AI学伴4" onclick="openLightbox(this)"><figcaption>超级学伴智能体（四）</figcaption></figure>
+      </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <h2>提问与交流</h2>
       <p>感谢各位专家同仁的聆听与指导，<br>让我们共同推进拔尖创新研究生培养体系数智化演进！</p>
       <div class="meta">天府研教 · 研究生教育标杆分享专题 · 2026年7月20日</div>
     </footer>
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
 </body>
 </html>
